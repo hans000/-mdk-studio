@@ -15,8 +15,8 @@ export default function FileItem(props: IProps) {
     return (
         <div className="file-item" style={{ margin: 8 }}>
             <h3>
-                <span>{props.name}</span>
-                <span className="file-item__desc">{props.description}</span>
+                <div>{props.name}</div>
+                <div className="file-item__desc">{props.description}</div>
             </h3>
             <div className='file-item__cont' style={{ overflow: "auto" }}>
                 {
