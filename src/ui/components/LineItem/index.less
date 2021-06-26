@@ -1,0 +1,30 @@
+.line-item {
+    position: relative;
+    white-space: nowrap;
+    &__num {
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        text-align: right;
+    }
+    &__btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        user-select: none;
+    }
+    &__text {
+        overflow: hidden;
+        margin-right: 2.5em;
+    }
+    &__view {
+        margin: 4px 2em;
+        padding: 4px;
+        border: 1px solid #aaa;
+    }
+    &__comment {
+        color: #00862e;
+    }
+}

@@ -1,0 +1,31 @@
+
+
+.jv-item {
+    user-select: none;
+    .active {
+        animation: cursor 1s linear infinite;
+    }
+    &__str {
+    }
+    &__enter {
+        &::after {
+            content: "↴";
+            color: #ccc;
+        }
+    }
+    &__space {
+        &::after {
+            content: "•";
+            color: #ccc;
+        }
+    }
+}
+
+@keyframes cursor {
+    from {
+        background-color: #d2d2ff;
+    }
+    to {
+        background-color: transparent;
+    }
+}
