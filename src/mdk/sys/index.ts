@@ -1,8 +1,8 @@
-import * as mdk from 'mdkjs'
+import mdk from 'mdkjs'
+import { FileAbstract } from '../../../../mdk/dist/core'
 import foo from '../changelog'
 import main from './functions/main'
 import * as tags from './tags'
-import { FileAbstract } from 'mdkjs'
 
 export default mdk.createPack({
     packname: 'sys',

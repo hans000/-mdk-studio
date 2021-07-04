@@ -38,11 +38,11 @@ export const alpha12 = mdk.createFile({
         ctx.addComment('添加对注释字段的高亮显示')
         ctx.addComment('添加createEntity用于生成实体，支持summon指令')
 
-        const creeper = mdk.createEntity({
-            id: 'creeper',
-            NoAI: true,
-            Fuse: 0,
-        })
-        creeper.summon()
+        // const creeper = mdk.createEntity({
+        //     id: 'creeper',
+        //     NoAI: true,
+        //     Fuse: 0,
+        // })
+        // creeper.summon()
     }
 })
