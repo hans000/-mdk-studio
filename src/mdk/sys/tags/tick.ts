@@ -1,4 +1,4 @@
-import * as mdk from "mdkjs";
+import mdk from "mdkjs";
 
 export default mdk.createFile({
     filename: "functions/tick",

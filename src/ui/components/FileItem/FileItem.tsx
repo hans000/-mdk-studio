@@ -1,5 +1,5 @@
+import { LineInfo } from "../../../../../mdk/dist/model";
 import LineItem from "../LineItem";
-import { LineInfo } from 'mdkjs'
 
 interface IProps {
     name: string;

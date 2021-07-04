@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileInfo } from '../../../../mdk/dist';
+import { FileInfo } from '../../../../mdk/dist/core';
 import pack from '../../mdk/sys'
 import FileItem from '../components/FileItem';
 import FileMetaItem from '../components/FileMetaItem';

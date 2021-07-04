@@ -1,5 +1,6 @@
 import JSzip from "jszip";
-import { FileInfo, LineInfo } from "mdkjs";
+import { FileInfo } from "../../../../mdk/dist/core";
+import { LineInfo } from "../../../../mdk/dist/model";
 
 export function renderZip(fileInfo: FileInfo[], name = "pack.zip") {
     const zip = new JSzip()

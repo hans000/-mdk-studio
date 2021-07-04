@@ -1,6 +1,7 @@
-import { LineInfo, JText } from 'mdkjs'
 import React from 'react'
 import { useState } from 'react'
+import { JText } from '../../../../../mdk/dist/lib'
+import { LineInfo } from '../../../../../mdk/dist/model'
 import JTextViewer from '../JTextViewer'
 import './index.less'
 
