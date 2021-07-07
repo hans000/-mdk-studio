@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FileInfo } from '../../../../mdk/dist/core';
 import pack from '../../mdk/sys'
 import FileItem from '../components/FileItem';
@@ -26,7 +25,7 @@ export default function() {
                     return (
                         item.type === 'file'
                             ? <FileItem fileInfo={item.extra} key={item.name} description={item.description} name={item.name}></FileItem>
-                            : <FileMetaItem key={item.name} text={item.text} description={item.description} name={item.name}></FileMetaItem>
+                            : <FileMetaItem type={item.type} fileInfo={item.extra} key={item.name} text={item.text} description={item.description} name={item.name}></FileMetaItem>
                     )
                 })
             }

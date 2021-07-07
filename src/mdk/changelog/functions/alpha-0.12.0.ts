@@ -1,9 +1,9 @@
 import mdk from 'mdkjs'
 
-export const shaped = mdk.createFile({
+export const shaped = mdk.createRecipe({
     filename: 'shaped1',
-    description: '有序合成，TODO：合成预览',
-    type: 'recipe',
+    description: '有序合成，合成预览',
+    type: 'crafting_shaped',
     render(ctx) {
         ctx.add({
             type: 'crafting_shaped',
@@ -25,6 +25,48 @@ export const shaped = mdk.createFile({
             }
         })
     }
+})
+
+export const shapeless = mdk.createRecipe({
+    filename: 'shapless',
+    description: '无序合成',
+    type: 'crafting_shapeless',
+    render(ctx) {
+        ctx.add({
+            type: "crafting_shapeless",
+            group: "dyed_bed",
+            ingredients: [
+              {
+                "item": "stone"
+              },
+              {
+                "item": "glass"
+              }
+            ],
+            "result": {
+                item: "stone"
+            }
+          })
+    }
+})
+
+export const smoke = mdk.createRecipe({
+  filename: 'smoke',
+  description: 'smoke',
+  type: 'smoking',
+  render(ctx) {
+    ctx.add({
+      "type": "smoking",
+      "ingredient": {
+        "item": "stone"
+      },
+      "result": {
+        item: "stone"
+      },
+      "experience": 0.35,
+      "cookingtime": 100
+    })
+  }
 })
 
 export const alpha12 = mdk.createFile({

@@ -1,4 +1,3 @@
-import React from "react";
 import View from "./ui/view";
 
 function App() {

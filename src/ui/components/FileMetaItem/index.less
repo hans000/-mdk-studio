@@ -1,4 +1,4 @@
-.file-item {
+.file-meta-item {
     h3 {
         font-size: 12px;
         background-color: #eee;
@@ -8,15 +8,29 @@
     pre {
         margin: 0;
     }
+    &__preview {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        cursor: pointer;
+    }
+    &__code {
+        font-family: consolas;
+        font-weight: 200;
+    }
     &__cont {
+        position: relative;
         max-height: 200px;
         overflow-y: auto;
-        background-color: #2a2a2a;
-        padding: 4px;
-        font-family: consolas;
         font-size: 12px;
-        font-weight: 200;
+        background-color: #2a2a2a;
         color: #eee;
+        padding: 4px;
+    }
+    &__wrap {
+        position: absolute;
+        right: 0;
+        top: 0;
     }
     &__desc {
         color: #aaa;
