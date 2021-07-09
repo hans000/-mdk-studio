@@ -2,6 +2,7 @@ import React from "react";
 import Tile from "./Tile";
 import Grid from "./Grid";
 import { ICraftData, ITileData, transform } from "./lib";
+import Smithing from "./Smithing";
 
 interface IProps {
     data: ICraftData;
@@ -23,7 +24,9 @@ export default React.memo(function Crafting(props: IProps) {
                     props.data.type === 'crafting_shaped' || 
                     props.data.type === 'crafting_shapeless'
                         ? <Grid rows={3} cols={3} data={data.input} />
-                        : <Tile data={data.input[0]}  />
+                        : props.data.type === 'smithing'
+                            ? <Smithing data={data.input} />
+                            : <Tile data={data.input[0]}  />
                 }
             </div>
             <div className='arrow'></div>

@@ -6,6 +6,7 @@ export enum CraftType {
     CraftShaped,        // 有序工作台
     CraftShapeless,     // 无序工作台
     StoneCutting,       // 切石机
+    Smithing,           // 锻造台
     Other,              // 其他，高炉、营火、熔炉、烟熏炉
 }
 export type CraftTypeId = keyof typeof CraftMap
@@ -17,6 +18,7 @@ export const CraftMap = {
     campfire_cooking: { name: '营火', type: CraftType.Other },
     smelting: { name: '熔炉', type: CraftType.Other },
     smoking: { name: '烟熏炉', type: CraftType.Other },
+    smithing: { name: '锻造台', type: CraftType.Smithing }
 }
 
 const ERROR_NAME = 'error'
@@ -86,6 +88,12 @@ function getCraftShapeless(data: any): ITileData[] {
     })
 }
 
+function getSmithing(data: any): ITileData[] {
+    const base = data.base.tag ? { id: [ERROR_NAME ], count: 1 } : { id: [trimPrefix(data.base.item)], count: 1 }
+    const addition = data.addition.tag ? { id: [ERROR_NAME ], count: 1 } : { id: [trimPrefix(data.addition.item)], count: 1 }
+    return [base, addition]
+}
+
 function getOthers(data: any): ITileData[] {
     if (Array.isArray(data.ingredient)) {
         return data.ingredient.map((v: any) => ({ id: [trimPrefix(v)], count: 1 }))
@@ -100,6 +108,8 @@ export function transform(data: any) {
         input = getCraftShaped(data)
     } else if (type === 'crafting_shapeless') {
         input = getCraftShapeless(data)
+    } else if (type === 'smithing') {
+        input = getSmithing(data)
     } else {
         input = getOthers(data)
     }

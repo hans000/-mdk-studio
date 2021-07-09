@@ -69,6 +69,26 @@ export const smoke = mdk.createRecipe({
   }
 })
 
+export const smithing = mdk.createRecipe({
+  filename: 'smite',
+  description: 'smite',
+  type: 'smithing',
+  render(ctx) {
+    ctx.add({
+      type: "smithing",
+      addition: {
+        item: 'dark_oak_slab',
+      },
+      base: {
+        tag: 'dead_brain_coral'
+      },
+      result: {
+        item: 'white_concrete'
+      }
+    })
+  }
+})
+
 export const alpha12 = mdk.createFile({
     filename: 'alpha12',
     description: '0.12.0-alpha更新说明',
