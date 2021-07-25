@@ -1,4 +1,10 @@
+import { Tooltip } from "antd";
 import React, { useState } from "react";
+import {
+    PartitionOutlined,
+    CalendarOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
 
 interface IProps {
     data: any
@@ -44,10 +50,63 @@ function toList(raw: string) {
     return result
 }
 
+function ComplexItem(props: {
+    className: string;
+    style: React.CSSProperties;
+    data: any;
+}) {
+    if (props.data.score) {
+        return (
+            <Tooltip title={<HoverItem data={props.data} />}>
+                <span className={props.className} style={props.style}>
+                    <CalendarOutlined />
+                </span>
+            </Tooltip>
+        )
+    } else if (props.data.nbt) {
+        return (
+            <Tooltip title={<HoverItem data={props.data}/>}>
+                <span className={props.className} style={props.style}>
+                    <PartitionOutlined />
+                </span>
+            </Tooltip>
+        )
+    } else if (props.data.selector) {
+        return (
+            <Tooltip title={<HoverItem data={props.data}/>}>
+                <span className={props.className} style={props.style}>
+                    <UserOutlined />
+                </span>
+            </Tooltip>
+        )
+    } else {
+        return (
+            <span></span>
+        )
+    }
+}
+
+function HoverItem(props: {
+    data: any
+}) {
+    return (
+        <div>
+            {
+                Object.keys(props.data).map(key => {
+                    return (
+                        <div key={key}>
+                            {key}: {JSON.stringify(props.data[key])}
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
+}
+
 export default function JTextViewerItem(props: IProps) {
     const [active, setActive] = useState(false)
     const style = transform(props.data)
-    const list = toList(props.data.text)
 
     function handleClick() {
         if (props.readonly) return
@@ -66,27 +125,30 @@ export default function JTextViewerItem(props: IProps) {
         [active, props.readonly]
     )
 
-    function handleDragStart(ev: React.DragEvent<HTMLSpanElement>) {
-        // ev.preventDefault()
-    }
-    function handleDrag() {
-        console.log(1);
-        
-    }
-
     return (
         <span className='jv-item'
-            // draggable
-            // onDragStart={handleDragStart}
-            // onDrag={handleDrag}
             onClick={handleClick}>
             {
-                list.map((token, index) => token.type === 'string'
-                    ? <span key={index} className={classObject.str} style={style}>{token.value}</span>
-                    : token.type === 'space'
-                        ? <span key={index} className={classObject.space}></span>
-                        : <br key={index} className={classObject.enter} />
-                )
+                props.data.text
+                    ? (
+                        toList(props.data.text).map((token, index) => token.type === 'string'
+                            ? (
+                                (props.data.clickEvent || props.data.hoverEvent)
+                                    ? (
+                                        <Tooltip key={index} title={<HoverItem data={props.data}/>}>
+                                            <span className={classObject.str} style={style}>
+                                                {token.value}
+                                            </span>
+                                        </Tooltip>
+                                    )
+                                    : <span key={index} className={classObject.str} style={style}>{token.value}</span>
+                            )
+                            : token.type === 'space'
+                                ? <span key={index} className={classObject.space}></span>
+                                : <br key={index} className={classObject.enter} />
+                        )
+                    )
+                    : <ComplexItem data={props.data} style={style} className={classObject.str} />
             }
         </span>
     )

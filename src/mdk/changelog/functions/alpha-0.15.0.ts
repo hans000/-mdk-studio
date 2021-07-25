@@ -20,8 +20,11 @@ export const alpha15 = mdk.createFile({
             mdk.Text.clickEvent(mdk.ClickEvent.runCommand('say 1')).text('click'),
             mdk.Text.hoverEvent(mdk.HoverEvent.showText('wd')).text('click'),
 
-            tplText.text('foo '),
-            tplText.white.text('bar '),
+            tplText.text('foo \n'),
+            tplText.white.text('timer:'),
+            tplText.score('timer'),
+            tplText.white.text('selector'),
+            tplText.selector('timer'),
         ]))
     }
 })
