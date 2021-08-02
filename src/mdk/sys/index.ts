@@ -7,7 +7,7 @@ import * as tags from './tags'
 export default mdk.createPack({
     packname: 'sys',
     description: '测试数据包',
-    packs: [
+    modules: [
         foo
     ],
     files: [

@@ -2,7 +2,7 @@ import mdk from 'mdkjs'
 
 export const alpha1 = mdk.createFile({
     filename: 'alpha1',
-    description: '0.11.0-alpha更新说明',
+    description: ({ filename }) => `${filename}更新说明`,
     tag: 'load',
     render(ctx) {
         ctx.addComment('调整createPack返回结构')

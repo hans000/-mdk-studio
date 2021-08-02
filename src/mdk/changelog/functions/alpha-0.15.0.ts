@@ -2,7 +2,7 @@ import mdk from 'mdkjs'
 
 export const alpha15 = mdk.createFile({
     filename: 'alpha15',
-    description: '0.15.0-alpha更新说明',
+    description: ({ filename }) => `${filename}更新说明`,
     tag: 'load',
     render(ctx) {
         ctx.addComment('优化了接口定义和导出')

@@ -2,7 +2,7 @@ import mdk from 'mdkjs'
 
 export const alpha13 = mdk.createFile({
     filename: 'alpha13',
-    description: '0.13.0-alpha更新说明',
+    description: ({ filename }) => `${filename}更新说明`,
     tag: 'load', // 如果此文件被加载会自动加入tags/load文件下
     render(ctx) {
         ctx.addComment('优化了接口定义，分包')
