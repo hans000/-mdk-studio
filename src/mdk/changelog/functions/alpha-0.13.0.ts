@@ -1,4 +1,4 @@
-import mdk from 'mdkjs'
+import * as mdk from 'mdkjs'
 
 export const alpha13 = mdk.createFile({
     filename: 'alpha13',

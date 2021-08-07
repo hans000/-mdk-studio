@@ -1,4 +1,4 @@
-import mdk from 'mdkjs'
+import * as mdk from 'mdkjs'
 
 export const alpha15 = mdk.createFile({
     filename: 'alpha15',
@@ -14,7 +14,8 @@ export const alpha15 = mdk.createFile({
             italic: true
         })
 
-        ctx.commands.tellraw(mdk.selector(), mdk.jtext([
+        const command = mdk.useCommand()
+        command.tellraw(mdk.jtext([
             mdk.Text.yellow.bold.text('hello'),
             mdk.Text.green.bold.text(' world\n'),
             mdk.Text.clickEvent(mdk.ClickEvent.runCommand('say 1')).text('click'),

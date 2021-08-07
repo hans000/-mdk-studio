@@ -1,5 +1,4 @@
-import mdk from 'mdkjs'
-import { FileAbstract } from '../../../../mdk/dist/core'
+import * as mdk from 'mdkjs'
 import foo from '../changelog'
 import main from './functions/main'
 import * as tags from './tags'
@@ -11,7 +10,7 @@ export default mdk.createPack({
         foo
     ],
     files: [
-        ...Object.values<FileAbstract<any>>(tags),
+        ...Object.values<any>(tags),
         main,
     ]
 })

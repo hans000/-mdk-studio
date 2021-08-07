@@ -1,4 +1,4 @@
-import mdk from "mdkjs";
+import * as mdk from 'mdkjs'
 import init from "../functions/init";
 
 export default mdk.createFile({

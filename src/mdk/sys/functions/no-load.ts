@@ -1,4 +1,4 @@
-import mdk from "mdkjs";
+import * as mdk from 'mdkjs'
 
 export default mdk.createFile({
     filename: "timer",

@@ -1,4 +1,4 @@
-import mdk from 'mdkjs'
+import * as mdk from 'mdkjs'
 import init from './init'
 
 export default mdk.createFile({
@@ -10,22 +10,21 @@ export default mdk.createFile({
 
         timerScb.add(mdk.selector(), 1)
 
-        ctx.commands.say('hello mc')
-        ctx.commands.tellraw(
-            mdk.selector(),
-            mdk.jtext([
+        const command = mdk.useCommand()
+
+        command.say('hello mc')
+        command.tellraw(mdk.jtext([
                 { text: 'hello', color: 'gold', },
                 { text: ' world', color: 'blue', }
             ])
         )
-        ctx.commands.tellraw(
-            mdk.selector(), mdk.jtext([
+        command.tellraw(mdk.jtext([
                 { text: 'hello', color: 'red', bold: true, underlined: true },
                 { text: ' world', color: 'blue', strikethrough: true },
             ])
         )
         for (let i = 0; i < length; i++) {
-            ctx.commands.say(`foo${i + 1}`)            
+            command.say(`foo${i + 1}`)            
         }
     }
 })
