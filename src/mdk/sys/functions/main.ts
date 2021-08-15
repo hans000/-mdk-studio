@@ -8,9 +8,9 @@ export default mdk.createFile({
     render(ctx) {
         const { timerScb, length } = init.getData()
 
-        timerScb.add(mdk.selector(), 1)
-
         const command = mdk.useCommand()
+
+        command.scoreboard(timerScb).add(mdk.selector(), 1)
 
         command.say('hello mc')
         command.tellraw(mdk.jtext([
