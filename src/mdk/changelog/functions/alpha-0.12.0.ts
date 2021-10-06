@@ -1,9 +1,8 @@
 import * as mdk from 'mdkjs'
 
-export const shaped = mdk.createRecipe({
+export const shaped = new mdk.CraftingShaped({
     filename: 'shaped1',
     description: '有序合成，合成预览',
-    type: 'crafting_shaped',
     render(ctx) {
         ctx.add({
             type: 'crafting_shaped',
@@ -27,10 +26,9 @@ export const shaped = mdk.createRecipe({
     }
 })
 
-export const shapeless = mdk.createRecipe({
+export const shapeless = new mdk.CraftingShapeless({
     filename: 'shapless',
     description: '无序合成',
-    type: 'crafting_shapeless',
     render(ctx) {
         ctx.add({
             type: "crafting_shapeless",
@@ -50,10 +48,9 @@ export const shapeless = mdk.createRecipe({
     }
 })
 
-export const smoke = mdk.createRecipe({
+export const smoke = new mdk.Smelting({
   filename: 'smoke',
   description: 'smoke',
-  type: 'smoking',
   render(ctx) {
     ctx.add({
       "type": "smoking",
@@ -69,10 +66,9 @@ export const smoke = mdk.createRecipe({
   }
 })
 
-export const smithing = mdk.createRecipe({
+export const smithing = new mdk.Smithing({
   filename: 'smite',
   description: 'smite',
-  type: 'smithing',
   render(ctx) {
     ctx.add({
       type: "smithing",
@@ -89,7 +85,7 @@ export const smithing = mdk.createRecipe({
   }
 })
 
-export const alpha12 = mdk.createFile({
+export const alpha12 = new mdk.File({
     filename: 'alpha12',
     description: '0.12.0-alpha更新说明',
     tag: 'load', // 如果此文件被加载会自动加入tags/load文件下

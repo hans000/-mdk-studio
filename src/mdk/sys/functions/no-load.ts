@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export default mdk.createFile({
+export default new mdk.File({
     filename: "timer",
     render(context) {
         // logic....

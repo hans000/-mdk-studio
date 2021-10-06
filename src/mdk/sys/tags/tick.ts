@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export default mdk.createFile({
+export default new mdk.TagFile({
     filename: "functions/tick",
     type: "tags",
     replace: true,

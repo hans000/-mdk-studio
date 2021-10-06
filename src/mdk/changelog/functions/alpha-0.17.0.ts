@@ -1,7 +1,7 @@
 import * as mdk from 'mdkjs'
 import { alpha16 } from './alpha-0.16.0'
 
-export const alpha17 = mdk.createFile({
+export const alpha17 = new mdk.File({
     filename: 'alpha17',
     description: ({ filename }) => `${filename}更新说明`,
     tag: 'load',

@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export default mdk.createFile({
+export default new mdk.PredicateFile({
     filename: "match-tool",
     type: "predicate", // 声明类型，默认是mcfunction
     render(context) {

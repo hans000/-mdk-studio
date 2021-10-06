@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { TextToken } from '../../../../../../mdk/packages/mdk-core/src'
 import './index.less'
 import JTextViewerItem from './JTextViewerItem'
 
 interface IProps {
-    data: any;
+    data: TextToken[];
     readonly?: boolean
 }
 

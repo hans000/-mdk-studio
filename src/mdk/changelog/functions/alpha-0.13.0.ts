@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export const alpha13 = mdk.createFile({
+export const alpha13 = new mdk.File({
     filename: 'alpha13',
     description: ({ filename }) => `${filename}更新说明`,
     tag: 'load', // 如果此文件被加载会自动加入tags/load文件下

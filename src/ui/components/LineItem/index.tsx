@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { JText } from '../../../../../mdk/dist/lib'
+import { JText, TextToken } from '../../../../../mdk/dist/lib'
 import { LineInfo } from '../../../../../mdk/dist/model'
 import JTextViewer from '../JTextViewer'
 import './index.less'
@@ -52,7 +52,7 @@ export default function LineItem(props: IProps) {
             {
                 visible && (
                     <div className="line-item__view">
-                        <JTextViewer data={(props.lineInfo.extra as JText).list} />
+                        <JTextViewer data={props.lineInfo.extra as TextToken[]} />
                     </div>
                 )
             }

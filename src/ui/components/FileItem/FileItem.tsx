@@ -4,11 +4,11 @@ import LineItem from "../LineItem";
 interface IProps {
     name: string;
     description: string;
-    fileInfo: {
+    fileInfo: Array<{
         type: string
         text: string
         extra: LineInfo[]
-    }[]
+    }>
 }
   
 export default function FileItem(props: IProps) {

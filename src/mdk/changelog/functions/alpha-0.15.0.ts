@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export const alpha15 = mdk.createFile({
+export const alpha15 = new mdk.File({
     filename: 'alpha15',
     description: ({ filename }) => `${filename}更新说明`,
     tag: 'load',
@@ -15,7 +15,7 @@ export const alpha15 = mdk.createFile({
         })
 
         const command = mdk.useCommand()
-        command.tellraw(mdk.jtext([
+        command.tellraw([
             mdk.Text.yellow.bold.text('hello'),
             mdk.Text.green.bold.text(' world\n'),
             mdk.Text.clickEvent(mdk.ClickEvent.runCommand('say 1')).text('click'),
@@ -26,6 +26,6 @@ export const alpha15 = mdk.createFile({
             tplText.score('timer'),
             tplText.white.text('selector'),
             tplText.selector('timer'),
-        ]))
+        ])
     }
 })

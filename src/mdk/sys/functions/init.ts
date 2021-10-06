@@ -1,6 +1,6 @@
 import * as mdk from 'mdkjs'
 
-export default mdk.createFile({
+export default new mdk.File({
     filename: "init",
     namespace: "system",
     tag: "load", // 标记当前文件属于哪个tag文件
