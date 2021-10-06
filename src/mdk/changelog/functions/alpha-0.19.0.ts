@@ -11,13 +11,12 @@ export const alpha19 = new mdk.File({
         ctx.addComment('修改JText api')
         ctx.addComment('引入scope，tag指令支持scope选项，避免重名')
 
-        const { tellraw, tag } = mdk.useCommand()
+        const commands = mdk.useCommand()
         
-        tellraw([
+        commands.tellraw([
             mdk.Text.bold.text('bold'),
             mdk.Text.white.text(' normal')
         ])
-        tag().add('foo-tag')
-        const obj = new mdk.Objective('timer')
+        commands.tag.add('foo-tag')
     }
 })

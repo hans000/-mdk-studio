@@ -1,4 +1,5 @@
 // 文件集中处理
+export * from './alpha-0.20.0'
 export * from './alpha-0.19.0'
 export * from './alpha-0.18.0'
 export * from './alpha-0.17.0'

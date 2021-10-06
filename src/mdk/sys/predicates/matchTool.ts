@@ -2,7 +2,8 @@ import * as mdk from 'mdkjs'
 
 export default new mdk.PredicateFile({
     filename: "match-tool",
-    type: "predicate", // 声明类型，默认是mcfunction
+    // 声明类型，默认是mcfunction
+    type: "predicates", 
     render(context) {
         // predicate 相关的api还在设计中，因此只能显式的声明
         context.add(
